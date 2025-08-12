@@ -3,61 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Acácia de Lima – especialista em gestão de mídias sociais, tráfego pago e tecnologia.">
+  <meta name="description" content="Portfólio de Acácia de Lima – especialista em gestão de mídias sociais, tráfego pago, análise de requisitos e suporte técnico.">
   <title>Portfólio | Acácia de Lima</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --cor-primaria: #143642;
+      --cor-secundaria: #0f2c33;
+      --cor-destaque: #00a86b;
+      --cor-texto: #222;
+      --cor-fundo: #ffffff;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #222;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
     }
+
     header {
-      background-color: #143642;
+      background-color: var(--cor-primaria);
       color: white;
       padding: 20px;
       text-align: center;
     }
+
     nav {
-      background-color: #0f2c33;
+      background-color: var(--cor-secundaria);
       padding: 10px;
       text-align: center;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 10px;
     }
+
     section {
       padding: 30px;
       max-width: 900px;
       margin: auto;
     }
+
     h1, h2 {
-      color: #143642;
+      color: var(--cor-primaria);
     }
+
     .projetos img {
       width: 100%;
       max-width: 600px;
       margin: 15px 0;
       border: 1px solid #ccc;
     }
+
     footer {
-      background-color: #143642;
+      background-color: var(--cor-primaria);
       color: white;
       text-align: center;
       padding: 15px;
     }
+
     .btn {
       display: inline-block;
-      background-color: #00a86b;
+      background-color: var(--cor-destaque);
       color: white;
       padding: 10px 20px;
       margin-top: 10px;
       text-decoration: none;
       border-radius: 5px;
+    }
+
+    .modo-escuro {
+      background-color: #1a1a1a;
+      color: #eee;
     }
   </style>
 </head>
@@ -73,11 +96,14 @@
   <a href="#servicos">Serviços</a>
   <a href="#portfolio">Portfólio</a>
   <a href="#contato">Contato</a>
+  <a href="#" onclick="alternarModo()">🌓</a>
 </nav>
 
 <section id="sobre">
   <h2>Sobre Mim</h2>
-  <p>Sou Acácia de Lima, especialista em marketing digital e tecnologia. Atuo com gestão de mídias sociais e tráfego pago para marcas que querem crescer online. Também desenvolvi projetos acadêmicos e técnicos, como meu TCC da UFPR disponível no GitHub.</p>
+  <p>Sou Acácia de Lima, especialista em marketing digital e tecnologia, com atuação em gestão de mídias sociais, tráfego pago e projetos digitais. Tenho experiência como <strong>Analista de Requisitos de Software</strong> e <strong>Analista de Suporte Técnico</strong>, além de formação acadêmica sólida com projetos publicados.</p>
+  <p>Busco unir criatividade com organização técnica para oferecer soluções completas – da estratégia de comunicação ao desenvolvimento de funcionalidades digitais úteis e bem planejadas.</p>
+  <a class="btn" href="https://www.linkedin.com/in/acaciadelima/" target="_blank"><i class="fab fa-linkedin"></i> Ver no LinkedIn</a>
 </section>
 
 <section id="servicos">
@@ -88,26 +114,41 @@
     <li>Campanhas de tráfego pago (Facebook Ads, Google Ads)</li>
     <li>Criação de landing pages e sites</li>
     <li>Consultoria personalizada e SEO</li>
+    <li>Análise de Requisitos de Software</li>
+    <li>Atendimento e Suporte Técnico a Sistemas</li>
   </ul>
 </section>
 
 <section id="portfolio">
   <h2>Portfólio</h2>
-  <p><strong>Gestão de Perfis:</strong> Atualmente gerencio 4 Instagram e 2 LinkedIn profissionais, com foco em identidade visual, estratégia de conteúdo e crescimento orgânico.</p>
+  <p><strong>Gestão de Perfis:</strong> Atualmente gerencio 4 perfis de Instagram e 2 perfis de LinkedIn profissionais, com foco em identidade visual, estratégia de conteúdo e crescimento orgânico.</p>
   <p><strong>Projeto de TCC (UFPR):</strong> Desenvolvimento de solução digital aplicada ao agendamento de atividades. Veja no GitHub:</p>
   <a class="btn" href="https://github.com/cahlima/agendamento-atividades" target="_blank">Ver projeto no GitHub</a>
 </section>
 
 <section id="contato">
   <h2>Contato</h2>
-  <p>Instagram profissional: <a href="https://instagram.com/acacia_digital" target="_blank">@acacia_digital</a></p>
-  <p>Site: <a href="https://cahlima.github.io/acaciadigital" target="_blank">acaciadigital</a></p>
-  <p>Email: [insira seu e-mail aqui]</p>
+  <p><strong>Instagram:</strong> <a href="https://instagram.com/acacia_digital" target="_blank">@acacia_digital</a></p>
+  <p><strong>Site:</strong> <a href="https://cahlima.github.io/acaciadigital" target="_blank">acaciadigital</a></p>
+  <p><strong>Email:</strong> contato@acaciadigital.com</p>
+  <form action="mailto:contato@acaciadigital.com" method="post" enctype="text/plain">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome" required><br><br>
+    <label for="mensagem">Mensagem:</label><br>
+    <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+    <input type="submit" value="Enviar" class="btn">
+  </form>
 </section>
 
 <footer>
   <p>&copy; 2025 Acácia de Lima – Todos os direitos reservados.</p>
 </footer>
+
+<script>
+  function alternarModo() {
+    document.body.classList.toggle('modo-escuro');
+  }
+</script>
 
 </body>
 </html>
